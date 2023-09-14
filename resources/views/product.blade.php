@@ -13,7 +13,7 @@
         @endforeach
     @endisset
 
-    <img src="{{ Storage::url($skus->product->image) }}">
+    <img src="{{ asset('images/' . $skus->product->image) }}">
     <p>{{ $skus->product->__('description') }}</p>
 
     @if($skus->isAvailable())

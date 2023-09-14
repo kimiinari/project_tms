@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
 Auth::routes([
@@ -33,6 +34,7 @@ Route::middleware(['set_locale'])->group(function () {
             Route::group(['middleware' => 'is_admin'], function () {
                 Route::get('/orders', 'OrderController@index')->name('home');
                 Route::get('/orders/{order}', 'OrderController@show')->name('orders.show');
+                Route::get('admin/products/{product}/skus/{sku}/edit', 'SkuController@edit')->name('skus.edit');
             });
 
             Route::resource('categories', 'CategoryController');

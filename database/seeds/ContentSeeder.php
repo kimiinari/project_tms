@@ -94,7 +94,7 @@ class ContentSeeder extends Seeder
                         'code' => 'iphone_x',
                         'description' => 'Отличный продвинутый телефон',
                         'description_en' => 'The best phone',
-                        'image' => 'products/iphone_x.jpg',
+                        'image' => '/resources/images/products/iphone_x.jpg',
                         'properties' => [
                             1, 2,
                         ],

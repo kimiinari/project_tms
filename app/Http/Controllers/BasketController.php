@@ -17,7 +17,7 @@ class BasketController extends Controller
         return view('basket', compact('order'));
     }
 
-    public function basketConfirm(Request $request)
+    public function basketConfirm(Request $request): \Illuminate\Http\RedirectResponse
     {
         $basket = new Basket();
         if ($basket->getOrder()->hasCoupon() && !$basket->getOrder()->coupon->availableForUse()) {
@@ -46,7 +46,7 @@ class BasketController extends Controller
         return view('order', compact('order'));
     }
 
-    public function basketAdd(Sku $skus)
+    public function basketAdd(Sku $skus): \Illuminate\Http\RedirectResponse
     {
         $result = (new Basket(true))->addSku($skus);
 
@@ -59,7 +59,7 @@ class BasketController extends Controller
         return redirect()->route('basket');
     }
 
-    public function basketRemove(Sku $skus)
+    public function basketRemove(Sku $skus): \Illuminate\Http\RedirectResponse
     {
         (new Basket())->removeSku($skus);
 
@@ -68,7 +68,7 @@ class BasketController extends Controller
         return redirect()->route('basket');
     }
 
-    public function setCoupon(AddCouponRequest $request)
+    public function setCoupon(AddCouponRequest $request): \Illuminate\Http\RedirectResponse
     {
         $coupon = Coupon::where('code', $request->coupon)->first();
 

@@ -34,7 +34,7 @@
                 </tr>
             @endisset
             <tr>
-                <td>Абсолютное значенин</td>
+                <td>Абсолютное значение</td>
                 <td>@if($coupon->isAbsolute()) Да @else Нет @endif</td>
             </tr>
             <tr>

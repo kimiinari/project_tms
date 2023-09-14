@@ -39,7 +39,7 @@ class SkuController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  Product  $product
-     * @return void
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function store(SkuRequest $request, Product $product)
     {
@@ -69,9 +69,9 @@ class SkuController extends Controller
      * @param  Sku  $skus
      * @return void
      */
-    public function edit(Product $product, Sku $skus)
+    public function edit(Product $product, Sku $sku)
     {
-        return view('auth.skus.form', compact('product', 'skus'));
+        return view('auth.skus.form', compact('product', 'sku'));
     }
 
     /**

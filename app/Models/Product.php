@@ -16,17 +16,17 @@ class Product extends Model
         'description_en'
     ];
 
-    public function category()
+    public function category(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo(Category::class);
     }
 
-    public function skus()
+    public function skus(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
         return $this->hasMany(Sku::class);
     }
 
-    public function properties()
+    public function properties(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
     {
         return $this->belongsToMany(Property::class, 'property_product')->withTimestamps();
     }

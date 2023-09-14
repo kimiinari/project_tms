@@ -5,6 +5,7 @@
 @section('content')
     <div class="col-md-12">
         <h1>{{ $product->name }}</h1>
+        <img src="{{ asset('images/' . $product->image) }}" height="160px">
         <table class="table">
             <tbody>
             <tr>
@@ -40,29 +41,25 @@
                 <td>{{ $product->description_en }}</td>
             </tr>
             <tr>
-                <td>Картинка</td>
-                <td><img src="{{ Storage::url($product->image) }}" height="240px"></td>
-            </tr>
-            <tr>
                 <td>Категория</td>
                 <td>{{ $product->category->name }}</td>
             </tr>
-            <tr>
-                <td>Лейблы</td>
-                <td>
-                    @if($product->isNew())
-                        <span class="badge badge-success">Новинка</span>
-                    @endif
+{{--            <tr>--}}
+{{--                <td>Лейблы</td>--}}
+{{--                <td>--}}
+{{--                    @if($product->isNew())--}}
+{{--                        <span class="badge badge-success">Новинка</span>--}}
+{{--                    @endif--}}
 
-                    @if($product->isRecommend())
-                        <span class="badge badge-warning">Рекомендуем</span>
-                    @endif
+{{--                    @if($product->isRecommend())--}}
+{{--                        <span class="badge badge-warning">Рекомендуем</span>--}}
+{{--                    @endif--}}
 
-                    @if($product->isHit())
-                        <span class="badge badge-danger">Хит продаж!</span>
-                    @endif
-                </td>
-            </tr>
+{{--                    @if($product->isHit())--}}
+{{--                        <span class="badge badge-danger">Хит продаж!</span>--}}
+{{--                    @endif--}}
+{{--                </td>--}}
+{{--            </tr>--}}
             </tbody>
         </table>
     </div>

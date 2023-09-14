@@ -1,6 +1,7 @@
+
 @extends('auth.layouts.master')
 
-@section('title', 'Авторизация')
+@section('title', 'Вход')
 
 @section('content')
     <div class="col-md-8">
@@ -37,3 +38,4 @@
 
 
 @endsection
+

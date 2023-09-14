@@ -1,13 +1,13 @@
 <?php
 
 return [
-    'online_shop' => 'Online Shop',
-    'all_products' => 'All products',
+    'online_shop' => 'NovaBuys',
+    'all_products' => 'Products',
     'product' => 'Product',
     'categories' => 'Categories',
     'all_categories' => 'All categories',
     'category' => 'Category ',
-    'cart' => 'Your cart',
+    'cart' => 'Cart',
     'reset_project' => 'Reset project to default state',
     'current_lang' => 'en',
     'set_lang' => 'ru',
@@ -20,7 +20,8 @@ return [
     'reset' => 'Reset',
     'price_from' => 'Price from',
     'to' => 'to',
-    'login' => 'Login',
+    'login' => 'Sign in',
+    'register' => 'Sign up',
     'logout' => 'Logout',
     'my_orders' => 'My orders',
     'admin_panel' => 'Admin panel',
@@ -30,4 +31,8 @@ return [
     'more' => 'More about',
     'not_available' => 'Not available',
     'project_reset' => 'The Project was reset',
+    'undefined' => 'Undefined',
+    'mail.order_created.dear' => 'Hello',
+    'mail.order_accepted' => 'Your order was accepted!',
+    'mail.order_price' => 'Price:'
 ];

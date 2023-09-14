@@ -26,7 +26,7 @@ class LoginController extends Controller
         if (Auth::user()->isAdmin()) {
             return route('home');
         } else {
-            return route('person.orders.index');
+            return route('index');
         }
     }
 

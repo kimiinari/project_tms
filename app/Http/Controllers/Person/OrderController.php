@@ -15,12 +15,12 @@ class OrderController extends Controller
         return view('auth.orders.index', compact('orders'));
     }
 
-    public function show(Order $order)
-    {
-        if (!Auth::user()->orders->contains($order)) {
-            return back();
-        }
 
-        return view('auth.orders.show', compact('order'));
+    public function show($id)
+    {
+        $order = Order::find($id);
+        $skus = $order->skus; // Убедитесь, что вы получаете данные $skus из вашей модели
+
+        return view('auth.orders.show', compact('order', 'skus'));
     }
 }

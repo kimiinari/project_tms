@@ -2,12 +2,12 @@
 
 return [
     'online_shop' => 'NovaBuys',
-    'all_products' => 'Все товары',
+    'all_products' => 'Продукты',
     'product' => 'Товар',
     'categories' => 'Категории',
     'all_categories' => 'Все Категории',
     'category' => 'Категория ',
-    'cart' => 'В корзину',
+    'cart' => 'Корзина',
     'reset_project' => 'Сбросить проект в начальное состояние',
     'current_lang' => 'ru',
     'set_lang' => 'en',
@@ -21,6 +21,7 @@ return [
     'price_from' => 'Цена от',
     'to' => 'до',
     'login' => 'Войти',
+    'register' => 'Регистрация',
     'logout' => 'Выйти',
     'my_orders' => 'Мои заказы',
     'admin_panel' => 'Панель администратора',
@@ -30,4 +31,8 @@ return [
     'more' => 'Подробнее',
     'not_available' => 'Не доступен',
     'project_reset' => 'Проект был сброшен в начальное состояние',
+    'undefined' => 'Неизвестно',
+    'mail.order_created.dear' => 'Здравствуйте',
+    'mail.order_accepted' => 'Ваш заказ был принят!',
+    'mail.order_price' => 'Сумма:'
 ];

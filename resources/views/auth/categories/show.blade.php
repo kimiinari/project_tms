@@ -41,8 +41,11 @@
             </tr>
             <tr>
                 <td>Картинка</td>
-                <td><img src="{{ Storage::url($category->image) }}"
-                         height="240px"></td>
+                @if(file_exists(public_path('categories/' . $category->image)))
+                    <img src="{{ asset('categories/' . $category->image) }}" height="240px">
+                @else
+                    <td>Неизвестно</td>
+                @endif
             </tr>
             <tr>
                 <td>Кол-во товаров</td>

@@ -1,19 +1,6 @@
-<div class="col-sm-6 col-md-4">
+<div class="thumbnail_container col-sm-6 col-md-4">
     <div class="thumbnail">
-        <div class="labels">
-            @if($sku->product->isNew())
-                <span class="badge badge-success">@lang('main.properties.new')</span>
-            @endif
-
-            @if($sku->product->isRecommend())
-                <span class="badge badge-warning">@lang('main.properties.recommend')</span>
-            @endif
-
-            @if($sku->product->isHit())
-                <span class="badge badge-danger">@lang('main.properties.hit')</span>
-            @endif
-        </div>
-        <img src="{{ Storage::url($sku->product->image) }}" alt="{{ $sku->product->__('name') }}">
+        <img src="{{ asset('images/' . $sku->product->image) }}" alt="{{ $sku->product->__('name') }}" width="150" height="150">
         <div class="caption">
             <h3>{{ $sku->product->__('name') }}</h3>
             @isset($sku->product->properties)
@@ -21,7 +8,7 @@
                     <h4>{{ $propertyOption->property->__('name') }}: {{ $propertyOption->__('name') }}</h4>
                 @endforeach
             @endisset
-            <p>{{ $sku->price }} {{ $currencySymbol }}</p>
+            <p>{{ $sku->price }}$</p>
             <p>
             <form action="{{ route('basket-add', $sku) }}" method="POST">
                 @if($sku->isAvailable())
@@ -30,8 +17,7 @@
                     @lang('main.not_available')
                 @endif
                 <a href="{{ route('sku',
-                    [isset($category) ? $category->code :
-                    $sku->product->category->code, $sku->product->code, $sku->id]) }}"
+                    [isset($category) ? $category->code : $sku->product->category->code, $sku->product->code, $sku->id]) }}"
                    class="btn btn-default"
                    role="button">@lang('main.more')</a>
                 @csrf

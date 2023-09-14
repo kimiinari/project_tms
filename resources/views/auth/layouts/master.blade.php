@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Админка: @yield('title')</title>
+    <title>Админ: @yield('title')</title>
 
     <!-- Scripts -->
     <script src="/js/app.js" defer></script>
@@ -15,9 +15,7 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
 
     <!-- Styles -->
-    <link href="/css/app.css" rel="stylesheet">
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/css/admin.css" rel="stylesheet">
+    <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
 </head>
 <body>
 <div id="app">
@@ -39,18 +37,17 @@
                     <li><a href="{{ route('home') }}">Заказы</a></li>
                     @endadmin
                 </ul>
-
                 @guest
                     <ul class="nav navbar-nav navbar-right">
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('login') }}">Войти</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('register') }}">Зарегистрироваться</a>
+                            <a class="nav-link" href="{{ route('register') }}">Зарегестрироваться</a>
                         </li>
                     </ul>
-                @endguest
 
+                @endguest
                 @auth
                     <ul class="nav navbar-nav navbar-right">
                         <li class="nav-item dropdown">

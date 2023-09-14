@@ -32,7 +32,11 @@
                     <td>{{ $product->id}}</td>
                     <td>{{ $product->code }}</td>
                     <td>{{ $product->name }}</td>
-                    <td>{{ $product->category->name }}</td>
+                    @if(!$product->category)
+                        <td>@lang('main.undefined')</td>
+                    @else
+                        <td>{{ $product->category->name }}</td>
+                    @endif
                     <td></td>
                     <td>
                         <div class="btn-group" role="group">
@@ -43,6 +47,8 @@
                                    href="{{ route('skus.index', $product) }}">Skus</a>
                                 <a class="btn btn-warning" type="button"
                                    href="{{ route('products.edit', $product) }}">Редактировать</a>
+{{--                                <a class="btn btn-warning" type="button" href="{{ route('skus.edit', ['product' => $product, 'sku' => $sku]) }}">Редактировать</a>--}}
+
                                 @csrf
                                 @method('DELETE')
                                 <input class="btn btn-danger" type="submit" value="Удалить"></form>
